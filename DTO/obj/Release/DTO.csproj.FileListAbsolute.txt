@@ -1,0 +1,6 @@
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\bin\Release\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\bin\Release\DTO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Release\DTO.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Release\DTO.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Release\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Release\DTO.pdb

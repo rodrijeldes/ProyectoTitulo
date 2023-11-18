@@ -1,0 +1,17 @@
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\DAO.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\DAO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\DAO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\EntityFramework.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\EntityFramework.SqlServer.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\DTO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\Entidades.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\Entidades.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\EntityFramework.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Release\EntityFramework.SqlServer.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Release\DAO.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Release\DAO.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Release\DAO.csproj.CopyComplete
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Release\DAO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Release\DAO.pdb

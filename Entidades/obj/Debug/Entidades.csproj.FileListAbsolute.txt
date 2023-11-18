@@ -1,0 +1,56 @@
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\Entidades.dll.config
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\Entidades.dll
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\Entidades.pdb
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\EntityFramework.dll
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\EntityFramework.xml
+C:\Desarrollo\Personal\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Desarrollo\Personal\BlackSheet\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Desarrollo\Personal\BlackSheet\Entidades\obj\Debug\Entidades.dll
+C:\Desarrollo\Personal\BlackSheet\Entidades\obj\Debug\Entidades.pdb
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\Entidades.dll.config
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\Entidades.dll
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\Entidades.pdb
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.dll
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.xml
+G:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+G:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+G:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.dll
+G:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.pdb
+C:\Desarrollo\Entidades\bin\Debug\Entidades.dll.config
+C:\Desarrollo\Entidades\bin\Debug\Entidades.dll
+C:\Desarrollo\Entidades\bin\Debug\Entidades.pdb
+C:\Desarrollo\Entidades\bin\Debug\EntityFramework.dll
+C:\Desarrollo\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Desarrollo\Entidades\bin\Debug\EntityFramework.xml
+C:\Desarrollo\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Desarrollo\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Desarrollo\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\Desarrollo\Entidades\obj\Debug\Entidades.dll
+C:\Desarrollo\Entidades\obj\Debug\Entidades.pdb
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\Entidades.dll.config
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\Entidades.dll
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\Entidades.pdb
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.dll
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.xml
+D:\Desarrollo\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+D:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.dll
+D:\Desarrollo\BlackSheet\Entidades\obj\Debug\Entidades.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\Entidades.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\Entidades.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\EntityFramework.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\EntityFramework.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Debug\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Debug\Entidades.pdb

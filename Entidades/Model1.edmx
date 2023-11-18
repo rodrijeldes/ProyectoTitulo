@@ -1,0 +1,1433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HojaDeTareasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="idActividad" />
+          </Key>
+          <Property Name="idActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="30" />
+          <Property Name="descripcion" Type="nchar" MaxLength="4000" Nullable="false" />
+          <Property Name="fechaInicio" Type="date" />
+          <Property Name="fechaTerminoPropuesto" Type="date" />
+          <Property Name="idEstadoActual" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" />
+          <Property Name="idProyecto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActividadRelacionada">
+          <Key>
+            <PropertyRef Name="idActividadRelacionada" />
+          </Key>
+          <Property Name="idActividadRelacionada" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idActividadPadre" Type="int" Nullable="false" />
+          <Property Name="idActividadHijo" Type="int" Nullable="false" />
+          <Property Name="comentario" Type="nvarchar" MaxLength="4000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActividadUsuario">
+          <Key>
+            <PropertyRef Name="idActividadUsuario" />
+          </Key>
+          <Property Name="idActividadUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idActividad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdjuntoActividad">
+          <Key>
+            <PropertyRef Name="idAdjuntoActividad" />
+          </Key>
+          <Property Name="idAdjuntoActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idAdjunto" Type="int" Nullable="false" />
+          <Property Name="idActividad" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="fechaCreacion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdjuntoProyecto">
+          <Key>
+            <PropertyRef Name="idAdjuntoProyecto" />
+          </Key>
+          <Property Name="idAdjuntoProyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProyecto" Type="int" Nullable="false" />
+          <Property Name="idAdjunto" Type="int" Nullable="false" />
+          <Property Name="fechaCreacion" Type="date" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Adjuntos">
+          <Key>
+            <PropertyRef Name="idAdjunto" />
+          </Key>
+          <Property Name="idAdjunto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuarioCreador" Type="int" />
+          <Property Name="nombreAdjunto" Type="nvarchar" MaxLength="200" />
+          <Property Name="tipoAdjunto" Type="nchar" MaxLength="20" />
+          <Property Name="contenType" Type="nchar" MaxLength="30" />
+          <Property Name="archivo" Type="varbinary(max)" />
+          <Property Name="extension" Type="nchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="AvanceActividad">
+          <Key>
+            <PropertyRef Name="idAvanceActivida" />
+          </Key>
+          <Property Name="idAvanceActivida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idActividad" Type="int" Nullable="false" />
+          <Property Name="avance" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="comentario" Type="nvarchar" MaxLength="4000" Nullable="false" />
+          <Property Name="fechaIngresoAvance" Type="datetime" Nullable="false" />
+          <Property Name="fechaIngresoSistema" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DependenciaDeUsuarios">
+          <Key>
+            <PropertyRef Name="idDependencia" />
+          </Key>
+          <Property Name="idDependencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idUsuarioDependeinte" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoActividad">
+          <Key>
+            <PropertyRef Name="idEstadoActividad" />
+          </Key>
+          <Property Name="idEstadoActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoProyecto">
+          <Key>
+            <PropertyRef Name="idEstadoProyecto" />
+          </Key>
+          <Property Name="idEstadoProyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreEstado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HistoricoCambiosDeEstado">
+          <Key>
+            <PropertyRef Name="idHistorico" />
+          </Key>
+          <Property Name="idHistorico" Type="int" Nullable="false" />
+          <Property Name="idUsuraio" Type="int" Nullable="false" />
+          <Property Name="idEstadoActividad" Type="int" Nullable="false" />
+          <Property Name="observacion" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="idProyecto" />
+          </Key>
+          <Property Name="idProyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreProyecto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="comentario" Type="varchar" MaxLength="1000" />
+          <Property Name="idUsuarioPorpietario" Type="int" />
+          <Property Name="fechaCreacion" Type="date" />
+          <Property Name="idEstadoProyecto" Type="int" Nullable="false" />
+          <Property Name="inicioEstimado" Type="date" />
+          <Property Name="terminoEstimado" Type="date" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreUsuario" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="correo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ubicacionUsuario" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="clave" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuarioProyecto">
+          <Key>
+            <PropertyRef Name="idUsuarioProyecto" />
+          </Key>
+          <Property Name="idUsuarioProyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idProyecto" Type="int" Nullable="false" />
+          <Property Name="esPropietario" Type="bit" />
+          <Property Name="puedeAsignarActividad" Type="bit" />
+          <Property Name="puedeCerrarActividad" Type="bit" />
+          <Property Name="puedeAgregarParticipante" Type="bit" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Actividad_EstadoActividad">
+          <End Role="EstadoActividad" Type="Self.EstadoActividad" Multiplicity="1" />
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoActividad">
+              <PropertyRef Name="idEstadoActividad" />
+            </Principal>
+            <Dependent Role="Actividad">
+              <PropertyRef Name="idEstadoActual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Actividad_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="Actividad">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Actividad_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Actividad">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadRelacionada_Actividad">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="ActividadRelacionada" Type="Self.ActividadRelacionada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="ActividadRelacionada">
+              <PropertyRef Name="idActividadPadre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadRelacionada_Actividad1">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="ActividadRelacionada" Type="Self.ActividadRelacionada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="ActividadRelacionada">
+              <PropertyRef Name="idActividadHijo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadUsuario_Actividad">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="ActividadUsuario" Type="Self.ActividadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="ActividadUsuario">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadUsuario_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="ActividadUsuario" Type="Self.ActividadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="ActividadUsuario">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoActividad_Actividad">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="AdjuntoActividad" Type="Self.AdjuntoActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="AdjuntoActividad">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoActividad_Adjuntos">
+          <End Role="Adjuntos" Type="Self.Adjuntos" Multiplicity="1" />
+          <End Role="AdjuntoActividad" Type="Self.AdjuntoActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adjuntos">
+              <PropertyRef Name="idAdjunto" />
+            </Principal>
+            <Dependent Role="AdjuntoActividad">
+              <PropertyRef Name="idAdjunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoActividad_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="AdjuntoActividad" Type="Self.AdjuntoActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="AdjuntoActividad">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoProyecto_Adjuntos">
+          <End Role="Adjuntos" Type="Self.Adjuntos" Multiplicity="1" />
+          <End Role="AdjuntoProyecto" Type="Self.AdjuntoProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adjuntos">
+              <PropertyRef Name="idAdjunto" />
+            </Principal>
+            <Dependent Role="AdjuntoProyecto">
+              <PropertyRef Name="idAdjunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoProyecto_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="AdjuntoProyecto" Type="Self.AdjuntoProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="AdjuntoProyecto">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoProyecto_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="AdjuntoProyecto" Type="Self.AdjuntoProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="AdjuntoProyecto">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adjuntos_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Adjuntos" Type="Self.Adjuntos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Adjuntos">
+              <PropertyRef Name="idUsuarioCreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AvanceActividad_Actividad">
+          <End Role="Actividad" Type="Self.Actividad" Multiplicity="1" />
+          <End Role="AvanceActividad" Type="Self.AvanceActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="AvanceActividad">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AvanceActividad_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="AvanceActividad" Type="Self.AvanceActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="AvanceActividad">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DependenciaDeUsuarios_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="DependenciaDeUsuarios" Type="Self.DependenciaDeUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="DependenciaDeUsuarios">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DependenciaDeUsuarios_Usuario1">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="DependenciaDeUsuarios" Type="Self.DependenciaDeUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="DependenciaDeUsuarios">
+              <PropertyRef Name="idUsuarioDependeinte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoCambiosDeEstado_EstadoActividad">
+          <End Role="EstadoActividad" Type="Self.EstadoActividad" Multiplicity="1" />
+          <End Role="HistoricoCambiosDeEstado" Type="Self.HistoricoCambiosDeEstado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoActividad">
+              <PropertyRef Name="idEstadoActividad" />
+            </Principal>
+            <Dependent Role="HistoricoCambiosDeEstado">
+              <PropertyRef Name="idEstadoActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoCambiosDeEstado_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="HistoricoCambiosDeEstado" Type="Self.HistoricoCambiosDeEstado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="HistoricoCambiosDeEstado">
+              <PropertyRef Name="idUsuraio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proyecto_EstadoProyecto">
+          <End Role="EstadoProyecto" Type="Self.EstadoProyecto" Multiplicity="1" />
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoProyecto">
+              <PropertyRef Name="idEstadoProyecto" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="idEstadoProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proyecto_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="idUsuarioPorpietario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioProyecto_Proyecto">
+          <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+          <End Role="UsuarioProyecto" Type="Self.UsuarioProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="UsuarioProyecto">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioProyecto_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="UsuarioProyecto" Type="Self.UsuarioProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioProyecto">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Usp_AgregarUsuarioProyecto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+          <Parameter Name="idproyecto" Type="int" Mode="In" />
+          <Parameter Name="asigna" Type="bit" Mode="In" />
+          <Parameter Name="cierra" Type="bit" Mode="In" />
+          <Parameter Name="participantes" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Usp_ListaActividadesProyectoPorUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+          <Parameter Name="idProyecto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Usp_ListarProyectoPorIdUsaurio" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Usp_ListaUsuarioProyecto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProyecto" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="HojaDeTareasModelStoreContainer">
+          <EntitySet Name="Actividad" EntityType="Self.Actividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActividadRelacionada" EntityType="Self.ActividadRelacionada" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActividadUsuario" EntityType="Self.ActividadUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdjuntoActividad" EntityType="Self.AdjuntoActividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdjuntoProyecto" EntityType="Self.AdjuntoProyecto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Adjuntos" EntityType="Self.Adjuntos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AvanceActividad" EntityType="Self.AvanceActividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DependenciaDeUsuarios" EntityType="Self.DependenciaDeUsuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoActividad" EntityType="Self.EstadoActividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoProyecto" EntityType="Self.EstadoProyecto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoricoCambiosDeEstado" EntityType="Self.HistoricoCambiosDeEstado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proyecto" EntityType="Self.Proyecto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuarioProyecto" EntityType="Self.UsuarioProyecto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Actividad_EstadoActividad" Association="Self.FK_Actividad_EstadoActividad">
+            <End Role="EstadoActividad" EntitySet="EstadoActividad" />
+            <End Role="Actividad" EntitySet="Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Actividad_Proyecto" Association="Self.FK_Actividad_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Actividad" EntitySet="Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Actividad_Usuario" Association="Self.FK_Actividad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Actividad" EntitySet="Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadRelacionada_Actividad" Association="Self.FK_ActividadRelacionada_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="ActividadRelacionada" EntitySet="ActividadRelacionada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadRelacionada_Actividad1" Association="Self.FK_ActividadRelacionada_Actividad1">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="ActividadRelacionada" EntitySet="ActividadRelacionada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadUsuario_Actividad" Association="Self.FK_ActividadUsuario_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="ActividadUsuario" EntitySet="ActividadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadUsuario_Usuario" Association="Self.FK_ActividadUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ActividadUsuario" EntitySet="ActividadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoActividad_Actividad" Association="Self.FK_AdjuntoActividad_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="AdjuntoActividad" EntitySet="AdjuntoActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoActividad_Adjuntos" Association="Self.FK_AdjuntoActividad_Adjuntos">
+            <End Role="Adjuntos" EntitySet="Adjuntos" />
+            <End Role="AdjuntoActividad" EntitySet="AdjuntoActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoActividad_Usuario" Association="Self.FK_AdjuntoActividad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="AdjuntoActividad" EntitySet="AdjuntoActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoProyecto_Adjuntos" Association="Self.FK_AdjuntoProyecto_Adjuntos">
+            <End Role="Adjuntos" EntitySet="Adjuntos" />
+            <End Role="AdjuntoProyecto" EntitySet="AdjuntoProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoProyecto_Proyecto" Association="Self.FK_AdjuntoProyecto_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="AdjuntoProyecto" EntitySet="AdjuntoProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoProyecto_Usuario" Association="Self.FK_AdjuntoProyecto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="AdjuntoProyecto" EntitySet="AdjuntoProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adjuntos_Usuario" Association="Self.FK_Adjuntos_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Adjuntos" EntitySet="Adjuntos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AvanceActividad_Actividad" Association="Self.FK_AvanceActividad_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="AvanceActividad" EntitySet="AvanceActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AvanceActividad_Usuario" Association="Self.FK_AvanceActividad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="AvanceActividad" EntitySet="AvanceActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DependenciaDeUsuarios_Usuario" Association="Self.FK_DependenciaDeUsuarios_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="DependenciaDeUsuarios" EntitySet="DependenciaDeUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DependenciaDeUsuarios_Usuario1" Association="Self.FK_DependenciaDeUsuarios_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="DependenciaDeUsuarios" EntitySet="DependenciaDeUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoCambiosDeEstado_EstadoActividad" Association="Self.FK_HistoricoCambiosDeEstado_EstadoActividad">
+            <End Role="EstadoActividad" EntitySet="EstadoActividad" />
+            <End Role="HistoricoCambiosDeEstado" EntitySet="HistoricoCambiosDeEstado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoCambiosDeEstado_Usuario" Association="Self.FK_HistoricoCambiosDeEstado_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="HistoricoCambiosDeEstado" EntitySet="HistoricoCambiosDeEstado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proyecto_EstadoProyecto" Association="Self.FK_Proyecto_EstadoProyecto">
+            <End Role="EstadoProyecto" EntitySet="EstadoProyecto" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proyecto_Usuario" Association="Self.FK_Proyecto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioProyecto_Proyecto" Association="Self.FK_UsuarioProyecto_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="UsuarioProyecto" EntitySet="UsuarioProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioProyecto_Usuario" Association="Self.FK_UsuarioProyecto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioProyecto" EntitySet="UsuarioProyecto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HojaDeTareasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HojaDeTareasContexto" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActividadRelacionada" EntityType="HojaDeTareasModel.ActividadRelacionada" />
+          <EntitySet Name="ActividadUsuario" EntityType="HojaDeTareasModel.ActividadUsuario" />
+          <EntitySet Name="AdjuntoActividad" EntityType="HojaDeTareasModel.AdjuntoActividad" />
+          <EntitySet Name="AdjuntoProyecto" EntityType="HojaDeTareasModel.AdjuntoProyecto" />
+          <EntitySet Name="Adjuntos" EntityType="HojaDeTareasModel.Adjuntos" />
+          <EntitySet Name="AvanceActividad" EntityType="HojaDeTareasModel.AvanceActividad" />
+          <EntitySet Name="DependenciaDeUsuarios" EntityType="HojaDeTareasModel.DependenciaDeUsuarios" />
+          <EntitySet Name="EstadoActividad" EntityType="HojaDeTareasModel.EstadoActividad" />
+          <EntitySet Name="EstadoProyecto" EntityType="HojaDeTareasModel.EstadoProyecto" />
+          <EntitySet Name="HistoricoCambiosDeEstado" EntityType="HojaDeTareasModel.HistoricoCambiosDeEstado" />
+          <EntitySet Name="Proyecto" EntityType="HojaDeTareasModel.Proyecto" />
+          <EntitySet Name="Usuario" EntityType="HojaDeTareasModel.Usuario" />
+          <EntitySet Name="UsuarioProyecto" EntityType="HojaDeTareasModel.UsuarioProyecto" />
+          <AssociationSet Name="FK_ActividadUsuario_Usuario" Association="HojaDeTareasModel.FK_ActividadUsuario_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ActividadUsuario" EntitySet="ActividadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoActividad_Adjuntos" Association="HojaDeTareasModel.FK_AdjuntoActividad_Adjuntos">
+            <End Role="Adjuntos" EntitySet="Adjuntos" />
+            <End Role="AdjuntoActividad" EntitySet="AdjuntoActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoActividad_Usuario" Association="HojaDeTareasModel.FK_AdjuntoActividad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="AdjuntoActividad" EntitySet="AdjuntoActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoProyecto_Adjuntos" Association="HojaDeTareasModel.FK_AdjuntoProyecto_Adjuntos">
+            <End Role="Adjuntos" EntitySet="Adjuntos" />
+            <End Role="AdjuntoProyecto" EntitySet="AdjuntoProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoProyecto_Proyecto" Association="HojaDeTareasModel.FK_AdjuntoProyecto_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="AdjuntoProyecto" EntitySet="AdjuntoProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoProyecto_Usuario" Association="HojaDeTareasModel.FK_AdjuntoProyecto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="AdjuntoProyecto" EntitySet="AdjuntoProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adjuntos_Usuario" Association="HojaDeTareasModel.FK_Adjuntos_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Adjuntos" EntitySet="Adjuntos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AvanceActividad_Usuario" Association="HojaDeTareasModel.FK_AvanceActividad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="AvanceActividad" EntitySet="AvanceActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DependenciaDeUsuarios_Usuario" Association="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="DependenciaDeUsuarios" EntitySet="DependenciaDeUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DependenciaDeUsuarios_Usuario1" Association="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario1">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="DependenciaDeUsuarios" EntitySet="DependenciaDeUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoCambiosDeEstado_EstadoActividad" Association="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_EstadoActividad">
+            <End Role="EstadoActividad" EntitySet="EstadoActividad" />
+            <End Role="HistoricoCambiosDeEstado" EntitySet="HistoricoCambiosDeEstado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proyecto_EstadoProyecto" Association="HojaDeTareasModel.FK_Proyecto_EstadoProyecto">
+            <End Role="EstadoProyecto" EntitySet="EstadoProyecto" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoricoCambiosDeEstado_Usuario" Association="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="HistoricoCambiosDeEstado" EntitySet="HistoricoCambiosDeEstado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proyecto_Usuario" Association="HojaDeTareasModel.FK_Proyecto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Proyecto" EntitySet="Proyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioProyecto_Proyecto" Association="HojaDeTareasModel.FK_UsuarioProyecto_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="UsuarioProyecto" EntitySet="UsuarioProyecto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioProyecto_Usuario" Association="HojaDeTareasModel.FK_UsuarioProyecto_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioProyecto" EntitySet="UsuarioProyecto" />
+          </AssociationSet>
+          <FunctionImport Name="Usp_ListarProyectoPorIdUsaurio" ReturnType="Collection(HojaDeTareasModel.Usp_ListarProyectoPorIdUsaurio_Result)">
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Usp_ListaUsuarioProyecto" ReturnType="Collection(HojaDeTareasModel.Usp_ListaUsuarioProyecto_Result)">
+          <Parameter Name="idProyecto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Usp_AgregarUsuarioProyecto">
+            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="idproyecto" Mode="In" Type="Int32" />
+            <Parameter Name="asigna" Mode="In" Type="Boolean" />
+            <Parameter Name="cierra" Mode="In" Type="Boolean" />
+            <Parameter Name="participantes" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <EntitySet Name="Actividad" EntityType="HojaDeTareasModel.Actividad" />
+          <AssociationSet Name="FK_Actividad_EstadoActividad" Association="HojaDeTareasModel.FK_Actividad_EstadoActividad">
+            <End Role="EstadoActividad" EntitySet="EstadoActividad" />
+            <End Role="Actividad" EntitySet="Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Actividad_Proyecto" Association="HojaDeTareasModel.FK_Actividad_Proyecto">
+            <End Role="Proyecto" EntitySet="Proyecto" />
+            <End Role="Actividad" EntitySet="Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Actividad_Usuario" Association="HojaDeTareasModel.FK_Actividad_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Actividad" EntitySet="Actividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadRelacionada_Actividad" Association="HojaDeTareasModel.FK_ActividadRelacionada_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="ActividadRelacionada" EntitySet="ActividadRelacionada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadRelacionada_Actividad1" Association="HojaDeTareasModel.FK_ActividadRelacionada_Actividad1">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="ActividadRelacionada" EntitySet="ActividadRelacionada" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActividadUsuario_Actividad" Association="HojaDeTareasModel.FK_ActividadUsuario_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="ActividadUsuario" EntitySet="ActividadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdjuntoActividad_Actividad" Association="HojaDeTareasModel.FK_AdjuntoActividad_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="AdjuntoActividad" EntitySet="AdjuntoActividad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AvanceActividad_Actividad" Association="HojaDeTareasModel.FK_AvanceActividad_Actividad">
+            <End Role="Actividad" EntitySet="Actividad" />
+            <End Role="AvanceActividad" EntitySet="AvanceActividad" />
+          </AssociationSet>
+          <FunctionImport Name="Usp_ListaActividadesProyectoPorUsuario" ReturnType="Collection(HojaDeTareasModel.Usp_ListaActividadesProyectoPorUsuario_Result)">
+            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="idProyecto" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="ActividadRelacionada">
+          <Key>
+            <PropertyRef Name="idActividadRelacionada" />
+          </Key>
+          <Property Name="idActividadRelacionada" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idActividadPadre" Type="Int32" Nullable="false" />
+          <Property Name="idActividadHijo" Type="Int32" Nullable="false" />
+          <Property Name="comentario" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_ActividadRelacionada_Actividad" FromRole="ActividadRelacionada" ToRole="Actividad" />
+          <NavigationProperty Name="Actividad1" Relationship="HojaDeTareasModel.FK_ActividadRelacionada_Actividad1" FromRole="ActividadRelacionada" ToRole="Actividad" />
+          </EntityType>
+        <EntityType Name="ActividadUsuario">
+          <Key>
+            <PropertyRef Name="idActividadUsuario" />
+          </Key>
+          <Property Name="idActividadUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idActividad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_ActividadUsuario_Usuario" FromRole="ActividadUsuario" ToRole="Usuario" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_ActividadUsuario_Actividad" FromRole="ActividadUsuario" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="AdjuntoActividad">
+          <Key>
+            <PropertyRef Name="idAdjuntoActividad" />
+          </Key>
+          <Property Name="idAdjuntoActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idAdjunto" Type="Int32" Nullable="false" />
+          <Property Name="idActividad" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="fechaCreacion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Adjuntos" Relationship="HojaDeTareasModel.FK_AdjuntoActividad_Adjuntos" FromRole="AdjuntoActividad" ToRole="Adjuntos" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_AdjuntoActividad_Usuario" FromRole="AdjuntoActividad" ToRole="Usuario" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_AdjuntoActividad_Actividad" FromRole="AdjuntoActividad" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="AdjuntoProyecto">
+          <Key>
+            <PropertyRef Name="idAdjuntoProyecto" />
+          </Key>
+          <Property Name="idAdjuntoProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProyecto" Type="Int32" Nullable="false" />
+          <Property Name="idAdjunto" Type="Int32" Nullable="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Adjuntos" Relationship="HojaDeTareasModel.FK_AdjuntoProyecto_Adjuntos" FromRole="AdjuntoProyecto" ToRole="Adjuntos" />
+          <NavigationProperty Name="Proyecto" Relationship="HojaDeTareasModel.FK_AdjuntoProyecto_Proyecto" FromRole="AdjuntoProyecto" ToRole="Proyecto" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_AdjuntoProyecto_Usuario" FromRole="AdjuntoProyecto" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Adjuntos">
+          <Key>
+            <PropertyRef Name="idAdjunto" />
+          </Key>
+          <Property Name="idAdjunto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuarioCreador" Type="Int32" />
+          <Property Name="nombreAdjunto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="tipoAdjunto" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="contenType" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="archivo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="extension" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="AdjuntoActividad" Relationship="HojaDeTareasModel.FK_AdjuntoActividad_Adjuntos" FromRole="Adjuntos" ToRole="AdjuntoActividad" />
+          <NavigationProperty Name="AdjuntoProyecto" Relationship="HojaDeTareasModel.FK_AdjuntoProyecto_Adjuntos" FromRole="Adjuntos" ToRole="AdjuntoProyecto" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_Adjuntos_Usuario" FromRole="Adjuntos" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="AvanceActividad">
+          <Key>
+            <PropertyRef Name="idAvanceActivida" />
+          </Key>
+          <Property Name="idAvanceActivida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idActividad" Type="Int32" Nullable="false" />
+          <Property Name="avance" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="comentario" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="fechaIngresoAvance" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechaIngresoSistema" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_AvanceActividad_Usuario" FromRole="AvanceActividad" ToRole="Usuario" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_AvanceActividad_Actividad" FromRole="AvanceActividad" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="DependenciaDeUsuarios">
+          <Key>
+            <PropertyRef Name="idDependencia" />
+          </Key>
+          <Property Name="idDependencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idUsuarioDependeinte" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario" FromRole="DependenciaDeUsuarios" ToRole="Usuario" />
+          <NavigationProperty Name="Usuario1" Relationship="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario1" FromRole="DependenciaDeUsuarios" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="EstadoActividad">
+          <Key>
+            <PropertyRef Name="idEstadoActividad" />
+          </Key>
+          <Property Name="idEstadoActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="HistoricoCambiosDeEstado" Relationship="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_EstadoActividad" FromRole="EstadoActividad" ToRole="HistoricoCambiosDeEstado" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_Actividad_EstadoActividad" FromRole="EstadoActividad" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="EstadoProyecto">
+          <Key>
+            <PropertyRef Name="idEstadoProyecto" />
+          </Key>
+          <Property Name="idEstadoProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreEstado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Proyecto" Relationship="HojaDeTareasModel.FK_Proyecto_EstadoProyecto" FromRole="EstadoProyecto" ToRole="Proyecto" />
+        </EntityType>
+        <EntityType Name="HistoricoCambiosDeEstado">
+          <Key>
+            <PropertyRef Name="idHistorico" />
+          </Key>
+          <Property Name="idHistorico" Type="Int32" Nullable="false" />
+          <Property Name="idUsuraio" Type="Int32" Nullable="false" />
+          <Property Name="idEstadoActividad" Type="Int32" Nullable="false" />
+          <Property Name="observacion" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EstadoActividad" Relationship="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_EstadoActividad" FromRole="HistoricoCambiosDeEstado" ToRole="EstadoActividad" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_Usuario" FromRole="HistoricoCambiosDeEstado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="idProyecto" />
+          </Key>
+          <Property Name="idProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreProyecto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="comentario" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="idUsuarioPorpietario" Type="Int32" />
+          <Property Name="idEstadoProyecto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AdjuntoProyecto" Relationship="HojaDeTareasModel.FK_AdjuntoProyecto_Proyecto" FromRole="Proyecto" ToRole="AdjuntoProyecto" />
+          <NavigationProperty Name="EstadoProyecto" Relationship="HojaDeTareasModel.FK_Proyecto_EstadoProyecto" FromRole="Proyecto" ToRole="EstadoProyecto" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_Proyecto_Usuario" FromRole="Proyecto" ToRole="Usuario" />
+          <NavigationProperty Name="UsuarioProyecto" Relationship="HojaDeTareasModel.FK_UsuarioProyecto_Proyecto" FromRole="Proyecto" ToRole="UsuarioProyecto" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="0" />
+          <Property Name="inicioEstimado" Type="DateTime" Precision="0" />
+          <Property Name="terminoEstimado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_Actividad_Proyecto" FromRole="Proyecto" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="correo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ubicacionUsuario" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="clave" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ActividadUsuario" Relationship="HojaDeTareasModel.FK_ActividadUsuario_Usuario" FromRole="Usuario" ToRole="ActividadUsuario" />
+          <NavigationProperty Name="AdjuntoActividad" Relationship="HojaDeTareasModel.FK_AdjuntoActividad_Usuario" FromRole="Usuario" ToRole="AdjuntoActividad" />
+          <NavigationProperty Name="AdjuntoProyecto" Relationship="HojaDeTareasModel.FK_AdjuntoProyecto_Usuario" FromRole="Usuario" ToRole="AdjuntoProyecto" />
+          <NavigationProperty Name="Adjuntos" Relationship="HojaDeTareasModel.FK_Adjuntos_Usuario" FromRole="Usuario" ToRole="Adjuntos" />
+          <NavigationProperty Name="AvanceActividad" Relationship="HojaDeTareasModel.FK_AvanceActividad_Usuario" FromRole="Usuario" ToRole="AvanceActividad" />
+          <NavigationProperty Name="DependenciaDeUsuarios" Relationship="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario" FromRole="Usuario" ToRole="DependenciaDeUsuarios" />
+          <NavigationProperty Name="DependenciaDeUsuarios1" Relationship="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario1" FromRole="Usuario" ToRole="DependenciaDeUsuarios" />
+          <NavigationProperty Name="HistoricoCambiosDeEstado" Relationship="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_Usuario" FromRole="Usuario" ToRole="HistoricoCambiosDeEstado" />
+          <NavigationProperty Name="Proyecto" Relationship="HojaDeTareasModel.FK_Proyecto_Usuario" FromRole="Usuario" ToRole="Proyecto" />
+          <NavigationProperty Name="UsuarioProyecto" Relationship="HojaDeTareasModel.FK_UsuarioProyecto_Usuario" FromRole="Usuario" ToRole="UsuarioProyecto" />
+          <NavigationProperty Name="Actividad" Relationship="HojaDeTareasModel.FK_Actividad_Usuario" FromRole="Usuario" ToRole="Actividad" />
+        </EntityType>
+        <EntityType Name="UsuarioProyecto">
+          <Key>
+            <PropertyRef Name="idUsuarioProyecto" />
+          </Key>
+          <Property Name="idUsuarioProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idProyecto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Proyecto" Relationship="HojaDeTareasModel.FK_UsuarioProyecto_Proyecto" FromRole="UsuarioProyecto" ToRole="Proyecto" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_UsuarioProyecto_Usuario" FromRole="UsuarioProyecto" ToRole="Usuario" />
+          <Property Name="esPropietario" Type="Boolean" />
+          <Property Name="puedeAsignarActividad" Type="Boolean" />
+          <Property Name="puedeCerrarActividad" Type="Boolean" />
+          <Property Name="puedeAgregarParticipante" Type="Boolean" />
+          <Property Name="activo" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_ActividadUsuario_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.ActividadUsuario" Role="ActividadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="ActividadUsuario">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoActividad_Adjuntos">
+          <End Type="HojaDeTareasModel.Adjuntos" Role="Adjuntos" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AdjuntoActividad" Role="AdjuntoActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adjuntos">
+              <PropertyRef Name="idAdjunto" />
+            </Principal>
+            <Dependent Role="AdjuntoActividad">
+              <PropertyRef Name="idAdjunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoActividad_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AdjuntoActividad" Role="AdjuntoActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="AdjuntoActividad">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoProyecto_Adjuntos">
+          <End Type="HojaDeTareasModel.Adjuntos" Role="Adjuntos" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AdjuntoProyecto" Role="AdjuntoProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adjuntos">
+              <PropertyRef Name="idAdjunto" />
+            </Principal>
+            <Dependent Role="AdjuntoProyecto">
+              <PropertyRef Name="idAdjunto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoProyecto_Proyecto">
+          <End Type="HojaDeTareasModel.Proyecto" Role="Proyecto" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AdjuntoProyecto" Role="AdjuntoProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="AdjuntoProyecto">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoProyecto_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AdjuntoProyecto" Role="AdjuntoProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="AdjuntoProyecto">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adjuntos_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="HojaDeTareasModel.Adjuntos" Role="Adjuntos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Adjuntos">
+              <PropertyRef Name="idUsuarioCreador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AvanceActividad_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AvanceActividad" Role="AvanceActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="AvanceActividad">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DependenciaDeUsuarios_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.DependenciaDeUsuarios" Role="DependenciaDeUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="DependenciaDeUsuarios">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DependenciaDeUsuarios_Usuario1">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.DependenciaDeUsuarios" Role="DependenciaDeUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="DependenciaDeUsuarios">
+              <PropertyRef Name="idUsuarioDependeinte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoCambiosDeEstado_EstadoActividad">
+          <End Type="HojaDeTareasModel.EstadoActividad" Role="EstadoActividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.HistoricoCambiosDeEstado" Role="HistoricoCambiosDeEstado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoActividad">
+              <PropertyRef Name="idEstadoActividad" />
+            </Principal>
+            <Dependent Role="HistoricoCambiosDeEstado">
+              <PropertyRef Name="idEstadoActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proyecto_EstadoProyecto">
+          <End Type="HojaDeTareasModel.EstadoProyecto" Role="EstadoProyecto" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.Proyecto" Role="Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoProyecto">
+              <PropertyRef Name="idEstadoProyecto" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="idEstadoProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoricoCambiosDeEstado_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.HistoricoCambiosDeEstado" Role="HistoricoCambiosDeEstado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="HistoricoCambiosDeEstado">
+              <PropertyRef Name="idUsuraio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proyecto_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="HojaDeTareasModel.Proyecto" Role="Proyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Proyecto">
+              <PropertyRef Name="idUsuarioPorpietario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioProyecto_Proyecto">
+          <End Type="HojaDeTareasModel.Proyecto" Role="Proyecto" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.UsuarioProyecto" Role="UsuarioProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="UsuarioProyecto">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioProyecto_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.UsuarioProyecto" Role="UsuarioProyecto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="UsuarioProyecto">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="Usp_ListarProyectoPorIdUsaurio_Result">
+          <Property Type="Int32" Name="idEstadoProyecto" Nullable="false" />
+          <Property Type="String" Name="nombreProyecto" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="comentario" Nullable="true" MaxLength="4000" />
+          <Property Type="DateTime" Name="fechaCreacion" Nullable="true" />
+          <Property Type="String" Name="nombreEstado" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TipoIntegrante" Nullable="false" MaxLength="12" />
+          <Property Type="DateTime" Name="inicioEstimado" Nullable="true" />
+          <Property Type="DateTime" Name="terminoEstimado" Nullable="true" />
+          <Property Type="Int32" Name="idProyecto" Nullable="false" />
+          <Property Type="Boolean" Name="puedeAgregarParticipante" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Usp_ListaUsuarioProyecto_Result">
+          <Property Type="Int32" Name="idUsuario" Nullable="false" />
+          <Property Type="String" Name="correo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="tipoIntegrante" Nullable="false" MaxLength="12" />
+          <Property Type="Boolean" Name="puedeAgregarParticipante" Nullable="true" />
+          <Property Type="Boolean" Name="puedeAsignarActividad" Nullable="true" />
+          <Property Type="Boolean" Name="puedeCerrarActividad" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Actividad">
+          <Key>
+            <PropertyRef Name="idActividad" />
+          </Key>
+          <Property Name="idActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="4000" FixedLength="true" Unicode="true" />
+          <Property Name="fechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="fechaTerminoPropuesto" Type="DateTime" Precision="0" />
+          <Property Name="idEstadoActual" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" />
+          <Property Name="idProyecto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EstadoActividad" Relationship="HojaDeTareasModel.FK_Actividad_EstadoActividad" FromRole="Actividad" ToRole="EstadoActividad" />
+          <NavigationProperty Name="Proyecto" Relationship="HojaDeTareasModel.FK_Actividad_Proyecto" FromRole="Actividad" ToRole="Proyecto" />
+          <NavigationProperty Name="Usuario" Relationship="HojaDeTareasModel.FK_Actividad_Usuario" FromRole="Actividad" ToRole="Usuario" />
+          <NavigationProperty Name="ActividadRelacionada" Relationship="HojaDeTareasModel.FK_ActividadRelacionada_Actividad" FromRole="Actividad" ToRole="ActividadRelacionada" />
+          <NavigationProperty Name="ActividadRelacionada1" Relationship="HojaDeTareasModel.FK_ActividadRelacionada_Actividad1" FromRole="Actividad" ToRole="ActividadRelacionada" />
+          <NavigationProperty Name="ActividadUsuario" Relationship="HojaDeTareasModel.FK_ActividadUsuario_Actividad" FromRole="Actividad" ToRole="ActividadUsuario" />
+          <NavigationProperty Name="AdjuntoActividad" Relationship="HojaDeTareasModel.FK_AdjuntoActividad_Actividad" FromRole="Actividad" ToRole="AdjuntoActividad" />
+          <NavigationProperty Name="AvanceActividad" Relationship="HojaDeTareasModel.FK_AvanceActividad_Actividad" FromRole="Actividad" ToRole="AvanceActividad" />
+        </EntityType>
+        <Association Name="FK_Actividad_EstadoActividad">
+          <End Type="HojaDeTareasModel.EstadoActividad" Role="EstadoActividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoActividad">
+              <PropertyRef Name="idEstadoActividad" />
+            </Principal>
+            <Dependent Role="Actividad">
+              <PropertyRef Name="idEstadoActual" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Actividad_Proyecto">
+          <End Type="HojaDeTareasModel.Proyecto" Role="Proyecto" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proyecto">
+              <PropertyRef Name="idProyecto" />
+            </Principal>
+            <Dependent Role="Actividad">
+              <PropertyRef Name="idProyecto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Actividad_Usuario">
+          <End Type="HojaDeTareasModel.Usuario" Role="Usuario" Multiplicity="0..1" />
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Actividad">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadRelacionada_Actividad">
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.ActividadRelacionada" Role="ActividadRelacionada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="ActividadRelacionada">
+              <PropertyRef Name="idActividadPadre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadRelacionada_Actividad1">
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.ActividadRelacionada" Role="ActividadRelacionada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="ActividadRelacionada">
+              <PropertyRef Name="idActividadHijo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActividadUsuario_Actividad">
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.ActividadUsuario" Role="ActividadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="ActividadUsuario">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdjuntoActividad_Actividad">
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AdjuntoActividad" Role="AdjuntoActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="AdjuntoActividad">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AvanceActividad_Actividad">
+          <End Type="HojaDeTareasModel.Actividad" Role="Actividad" Multiplicity="1" />
+          <End Type="HojaDeTareasModel.AvanceActividad" Role="AvanceActividad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actividad">
+              <PropertyRef Name="idActividad" />
+            </Principal>
+            <Dependent Role="AvanceActividad">
+              <PropertyRef Name="idActividad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="Usp_ListaActividadesProyectoPorUsuario_Result">
+          <Property Type="Int32" Name="idActividad" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="estadoActividad" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="usuario" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="idUsuario" Nullable="true" />
+          <Property Type="DateTime" Name="fechaInicio" Nullable="true" />
+          <Property Type="DateTime" Name="fechaTermino" Nullable="true" />
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="2000" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HojaDeTareasModelStoreContainer" CdmEntityContainer="HojaDeTareasContexto">
+          <EntitySetMapping Name="ActividadRelacionada">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.ActividadRelacionada">
+              <MappingFragment StoreEntitySet="ActividadRelacionada">
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="idActividadHijo" ColumnName="idActividadHijo" />
+                <ScalarProperty Name="idActividadPadre" ColumnName="idActividadPadre" />
+                <ScalarProperty Name="idActividadRelacionada" ColumnName="idActividadRelacionada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActividadUsuario">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.ActividadUsuario">
+              <MappingFragment StoreEntitySet="ActividadUsuario">
+                <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idActividadUsuario" ColumnName="idActividadUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjuntoActividad">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.AdjuntoActividad">
+              <MappingFragment StoreEntitySet="AdjuntoActividad">
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+                <ScalarProperty Name="idAdjunto" ColumnName="idAdjunto" />
+                <ScalarProperty Name="idAdjuntoActividad" ColumnName="idAdjuntoActividad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdjuntoProyecto">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.AdjuntoProyecto">
+              <MappingFragment StoreEntitySet="AdjuntoProyecto">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="idAdjunto" ColumnName="idAdjunto" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="idAdjuntoProyecto" ColumnName="idAdjuntoProyecto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Adjuntos">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.Adjuntos">
+              <MappingFragment StoreEntitySet="Adjuntos">
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="archivo" ColumnName="archivo" />
+                <ScalarProperty Name="contenType" ColumnName="contenType" />
+                <ScalarProperty Name="tipoAdjunto" ColumnName="tipoAdjunto" />
+                <ScalarProperty Name="nombreAdjunto" ColumnName="nombreAdjunto" />
+                <ScalarProperty Name="idUsuarioCreador" ColumnName="idUsuarioCreador" />
+                <ScalarProperty Name="idAdjunto" ColumnName="idAdjunto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvanceActividad">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.AvanceActividad">
+              <MappingFragment StoreEntitySet="AvanceActividad">
+                <ScalarProperty Name="fechaIngresoSistema" ColumnName="fechaIngresoSistema" />
+                <ScalarProperty Name="fechaIngresoAvance" ColumnName="fechaIngresoAvance" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="avance" ColumnName="avance" />
+                <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+                <ScalarProperty Name="idAvanceActivida" ColumnName="idAvanceActivida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DependenciaDeUsuarios">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.DependenciaDeUsuarios">
+              <MappingFragment StoreEntitySet="DependenciaDeUsuarios">
+                <ScalarProperty Name="idUsuarioDependeinte" ColumnName="idUsuarioDependeinte" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoActividad">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.EstadoActividad">
+              <MappingFragment StoreEntitySet="EstadoActividad">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="idEstadoActividad" ColumnName="idEstadoActividad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoProyecto">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.EstadoProyecto">
+              <MappingFragment StoreEntitySet="EstadoProyecto">
+                <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
+                <ScalarProperty Name="idEstadoProyecto" ColumnName="idEstadoProyecto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoricoCambiosDeEstado">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.HistoricoCambiosDeEstado">
+              <MappingFragment StoreEntitySet="HistoricoCambiosDeEstado">
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="idEstadoActividad" ColumnName="idEstadoActividad" />
+                <ScalarProperty Name="idUsuraio" ColumnName="idUsuraio" />
+                <ScalarProperty Name="idHistorico" ColumnName="idHistorico" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proyecto">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.Proyecto">
+              <MappingFragment StoreEntitySet="Proyecto">
+                <ScalarProperty Name="terminoEstimado" ColumnName="terminoEstimado" />
+                <ScalarProperty Name="inicioEstimado" ColumnName="inicioEstimado" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="idEstadoProyecto" ColumnName="idEstadoProyecto" />
+                <ScalarProperty Name="idUsuarioPorpietario" ColumnName="idUsuarioPorpietario" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="nombreProyecto" ColumnName="nombreProyecto" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="ubicacionUsuario" ColumnName="ubicacionUsuario" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuarioProyecto">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.UsuarioProyecto">
+              <MappingFragment StoreEntitySet="UsuarioProyecto">
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="puedeAgregarParticipante" ColumnName="puedeAgregarParticipante" />
+                <ScalarProperty Name="puedeCerrarActividad" ColumnName="puedeCerrarActividad" />
+                <ScalarProperty Name="puedeAsignarActividad" ColumnName="puedeAsignarActividad" />
+                <ScalarProperty Name="esPropietario" ColumnName="esPropietario" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idUsuarioProyecto" ColumnName="idUsuarioProyecto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Usp_ListarProyectoPorIdUsaurio" FunctionName="HojaDeTareasModel.Store.Usp_ListarProyectoPorIdUsaurio">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HojaDeTareasModel.Usp_ListarProyectoPorIdUsaurio_Result">
+                <ScalarProperty Name="idEstadoProyecto" ColumnName="idEstadoProyecto" />
+                <ScalarProperty Name="nombreProyecto" ColumnName="nombreProyecto" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
+                <ScalarProperty Name="TipoIntegrante" ColumnName="TipoIntegrante" />
+                <ScalarProperty Name="inicioEstimado" ColumnName="inicioEstimado" />
+                <ScalarProperty Name="terminoEstimado" ColumnName="terminoEstimado" />
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="puedeAgregarParticipante" ColumnName="puedeAgregarParticipante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Usp_ListaUsuarioProyecto" FunctionName="HojaDeTareasModel.Store.Usp_ListaUsuarioProyecto">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HojaDeTareasModel.Usp_ListaUsuarioProyecto_Result">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="tipoIntegrante" ColumnName="tipoIntegrante" />
+                <ScalarProperty Name="puedeAgregarParticipante" ColumnName="puedeAgregarParticipante" />
+                <ScalarProperty Name="puedeAsignarActividad" ColumnName="puedeAsignarActividad" />
+                <ScalarProperty Name="puedeCerrarActividad" ColumnName="puedeCerrarActividad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Usp_AgregarUsuarioProyecto" FunctionName="HojaDeTareasModel.Store.Usp_AgregarUsuarioProyecto" />
+          <EntitySetMapping Name="Actividad">
+            <EntityTypeMapping TypeName="HojaDeTareasModel.Actividad">
+              <MappingFragment StoreEntitySet="Actividad">
+                <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idEstadoActual" ColumnName="idEstadoActual" />
+                <ScalarProperty Name="fechaTerminoPropuesto" ColumnName="fechaTerminoPropuesto" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Usp_ListaActividadesProyectoPorUsuario" FunctionName="HojaDeTareasModel.Store.Usp_ListaActividadesProyectoPorUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HojaDeTareasModel.Usp_ListaActividadesProyectoPorUsuario_Result">
+                <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estadoActividad" ColumnName="estadoActividad" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaTermino" ColumnName="fechaTermino" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

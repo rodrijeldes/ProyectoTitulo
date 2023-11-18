@@ -1,0 +1,12 @@
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\Entidades.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\Entidades.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\EntityFramework.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\EntityFramework.SqlServer.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\EntityFramework.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\bin\Release\EntityFramework.SqlServer.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Release\Entidades.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Release\Entidades.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Release\Entidades.csproj.CopyComplete
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Release\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Entidades\obj\Release\Entidades.pdb

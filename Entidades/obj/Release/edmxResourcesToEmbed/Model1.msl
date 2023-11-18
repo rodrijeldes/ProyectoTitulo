@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HojaDeTareasModelStoreContainer" CdmEntityContainer="HojaDeTareasContexto">
+    <EntitySetMapping Name="ActividadRelacionada">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.ActividadRelacionada">
+        <MappingFragment StoreEntitySet="ActividadRelacionada">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="idActividadHijo" ColumnName="idActividadHijo" />
+          <ScalarProperty Name="idActividadPadre" ColumnName="idActividadPadre" />
+          <ScalarProperty Name="idActividadRelacionada" ColumnName="idActividadRelacionada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActividadUsuario">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.ActividadUsuario">
+        <MappingFragment StoreEntitySet="ActividadUsuario">
+          <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idActividadUsuario" ColumnName="idActividadUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdjuntoActividad">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.AdjuntoActividad">
+        <MappingFragment StoreEntitySet="AdjuntoActividad">
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+          <ScalarProperty Name="idAdjunto" ColumnName="idAdjunto" />
+          <ScalarProperty Name="idAdjuntoActividad" ColumnName="idAdjuntoActividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdjuntoProyecto">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.AdjuntoProyecto">
+        <MappingFragment StoreEntitySet="AdjuntoProyecto">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="idAdjunto" ColumnName="idAdjunto" />
+          <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+          <ScalarProperty Name="idAdjuntoProyecto" ColumnName="idAdjuntoProyecto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adjuntos">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.Adjuntos">
+        <MappingFragment StoreEntitySet="Adjuntos">
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="archivo" ColumnName="archivo" />
+          <ScalarProperty Name="contenType" ColumnName="contenType" />
+          <ScalarProperty Name="tipoAdjunto" ColumnName="tipoAdjunto" />
+          <ScalarProperty Name="nombreAdjunto" ColumnName="nombreAdjunto" />
+          <ScalarProperty Name="idUsuarioCreador" ColumnName="idUsuarioCreador" />
+          <ScalarProperty Name="idAdjunto" ColumnName="idAdjunto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvanceActividad">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.AvanceActividad">
+        <MappingFragment StoreEntitySet="AvanceActividad">
+          <ScalarProperty Name="fechaIngresoSistema" ColumnName="fechaIngresoSistema" />
+          <ScalarProperty Name="fechaIngresoAvance" ColumnName="fechaIngresoAvance" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="avance" ColumnName="avance" />
+          <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+          <ScalarProperty Name="idAvanceActivida" ColumnName="idAvanceActivida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DependenciaDeUsuarios">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.DependenciaDeUsuarios">
+        <MappingFragment StoreEntitySet="DependenciaDeUsuarios">
+          <ScalarProperty Name="idUsuarioDependeinte" ColumnName="idUsuarioDependeinte" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idDependencia" ColumnName="idDependencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoActividad">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.EstadoActividad">
+        <MappingFragment StoreEntitySet="EstadoActividad">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="idEstadoActividad" ColumnName="idEstadoActividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstadoProyecto">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.EstadoProyecto">
+        <MappingFragment StoreEntitySet="EstadoProyecto">
+          <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
+          <ScalarProperty Name="idEstadoProyecto" ColumnName="idEstadoProyecto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoricoCambiosDeEstado">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.HistoricoCambiosDeEstado">
+        <MappingFragment StoreEntitySet="HistoricoCambiosDeEstado">
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="idEstadoActividad" ColumnName="idEstadoActividad" />
+          <ScalarProperty Name="idUsuraio" ColumnName="idUsuraio" />
+          <ScalarProperty Name="idHistorico" ColumnName="idHistorico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyecto">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.Proyecto">
+        <MappingFragment StoreEntitySet="Proyecto">
+          <ScalarProperty Name="terminoEstimado" ColumnName="terminoEstimado" />
+          <ScalarProperty Name="inicioEstimado" ColumnName="inicioEstimado" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="idEstadoProyecto" ColumnName="idEstadoProyecto" />
+          <ScalarProperty Name="idUsuarioPorpietario" ColumnName="idUsuarioPorpietario" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="nombreProyecto" ColumnName="nombreProyecto" />
+          <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="clave" ColumnName="clave" />
+          <ScalarProperty Name="ubicacionUsuario" ColumnName="ubicacionUsuario" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioProyecto">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.UsuarioProyecto">
+        <MappingFragment StoreEntitySet="UsuarioProyecto">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="puedeAgregarParticipante" ColumnName="puedeAgregarParticipante" />
+          <ScalarProperty Name="puedeCerrarActividad" ColumnName="puedeCerrarActividad" />
+          <ScalarProperty Name="puedeAsignarActividad" ColumnName="puedeAsignarActividad" />
+          <ScalarProperty Name="esPropietario" ColumnName="esPropietario" />
+          <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idUsuarioProyecto" ColumnName="idUsuarioProyecto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Usp_ListarProyectoPorIdUsaurio" FunctionName="HojaDeTareasModel.Store.Usp_ListarProyectoPorIdUsaurio">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HojaDeTareasModel.Usp_ListarProyectoPorIdUsaurio_Result">
+          <ScalarProperty Name="idEstadoProyecto" ColumnName="idEstadoProyecto" />
+          <ScalarProperty Name="nombreProyecto" ColumnName="nombreProyecto" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+          <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
+          <ScalarProperty Name="TipoIntegrante" ColumnName="TipoIntegrante" />
+          <ScalarProperty Name="inicioEstimado" ColumnName="inicioEstimado" />
+          <ScalarProperty Name="terminoEstimado" ColumnName="terminoEstimado" />
+          <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+          <ScalarProperty Name="puedeAgregarParticipante" ColumnName="puedeAgregarParticipante" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_ListaUsuarioProyecto" FunctionName="HojaDeTareasModel.Store.Usp_ListaUsuarioProyecto">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HojaDeTareasModel.Usp_ListaUsuarioProyecto_Result">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="tipoIntegrante" ColumnName="tipoIntegrante" />
+          <ScalarProperty Name="puedeAgregarParticipante" ColumnName="puedeAgregarParticipante" />
+          <ScalarProperty Name="puedeAsignarActividad" ColumnName="puedeAsignarActividad" />
+          <ScalarProperty Name="puedeCerrarActividad" ColumnName="puedeCerrarActividad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Usp_AgregarUsuarioProyecto" FunctionName="HojaDeTareasModel.Store.Usp_AgregarUsuarioProyecto" />
+    <EntitySetMapping Name="Actividad">
+      <EntityTypeMapping TypeName="HojaDeTareasModel.Actividad">
+        <MappingFragment StoreEntitySet="Actividad">
+          <ScalarProperty Name="idProyecto" ColumnName="idProyecto" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idEstadoActual" ColumnName="idEstadoActual" />
+          <ScalarProperty Name="fechaTerminoPropuesto" ColumnName="fechaTerminoPropuesto" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Usp_ListaActividadesProyectoPorUsuario" FunctionName="HojaDeTareasModel.Store.Usp_ListaActividadesProyectoPorUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HojaDeTareasModel.Usp_ListaActividadesProyectoPorUsuario_Result">
+          <ScalarProperty Name="idActividad" ColumnName="idActividad" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="estadoActividad" ColumnName="estadoActividad" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="fechaTermino" ColumnName="fechaTermino" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

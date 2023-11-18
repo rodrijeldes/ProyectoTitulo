@@ -1,0 +1,28 @@
+C:\Desarrollo\Personal\BlackSheet\DTO\bin\Debug\DTO.dll
+C:\Desarrollo\Personal\BlackSheet\DTO\bin\Debug\DTO.pdb
+C:\Desarrollo\Personal\BlackSheet\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Desarrollo\Personal\BlackSheet\DTO\obj\Debug\DTO.dll
+C:\Desarrollo\Personal\BlackSheet\DTO\obj\Debug\DTO.pdb
+G:\Desarrollo\BlackSheet\DTO\bin\Debug\DTO.dll
+G:\Desarrollo\BlackSheet\DTO\bin\Debug\DTO.pdb
+G:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+G:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.dll
+G:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.pdb
+C:\Desarrollo\DTO\bin\Debug\DTO.dll
+C:\Desarrollo\DTO\bin\Debug\DTO.pdb
+C:\Desarrollo\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Desarrollo\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Desarrollo\DTO\obj\Debug\DTO.dll
+C:\Desarrollo\DTO\obj\Debug\DTO.pdb
+D:\Desarrollo\BlackSheet\DTO\bin\Debug\DTO.dll
+D:\Desarrollo\BlackSheet\DTO\bin\Debug\DTO.pdb
+D:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.dll
+D:\Desarrollo\BlackSheet\DTO\obj\Debug\DTO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\bin\Debug\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\bin\Debug\DTO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Debug\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DTO\obj\Debug\DTO.pdb

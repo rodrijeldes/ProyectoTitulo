@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Black-Sheet</title>
+    @Styles.Render("~/Content/BlackSheet/css")
+    
+
+</head>
+<body>
+    <div id="wrapper">
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">         
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Action("Login","Inicio")">Black-Sheet</a>
+            </div>
+        </nav>
+      
+
+@RenderBody()
+
+
+        @*<div id="page-wrapper">
+            
+            <div class="container-fluid">
+            </div>            
+        </div>        
+    </div>*@
+    
+    @Scripts.Render("~/Script/BlackShet/js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model MVC_HojaDeTareas.Models._ListaProyectoModel
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th> Nombre </th>
+                <th> Comentario</th>
+                <th> Fecha Creación</th>
+                <th> Inicio Planeado</th>
+                <th> Término Planeado</th>
+                <th> Estado </th>
+                <th> Tipo Integrante </th>                
+                <th> Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.proyectos)
+            {
+                <tr>
+                    <td>@p.nombreProyecto</td>
+                    <td>@p.comentario</td>
+                    <td>@p.fechaCreacion</td>
+                    <td>@p.inicioEstimado</td>
+                    <td>@p.terminoEstimado</td>
+                    <td>@p.nombreEstado</td>
+                    <td>@p.TipoIntegrante</td>                    
+                    <td>
+                        <div class="col-sm-1" title="Agregar Participantes" >
+                            @if (p.puedeAgregarParticipante == true)
+                            { <i class="fa fa-user" onclick="AgregarUsuario(@p.idProyecto)"></i>}
+                        </div>
+                        <div class="col-sm-1" title="Ir al Proyecto">
+                            <a href="@Url.Action("Actividad","Actividad")?idProyecto=@p.idProyecto"><i class="fa fa-fw fa-table"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

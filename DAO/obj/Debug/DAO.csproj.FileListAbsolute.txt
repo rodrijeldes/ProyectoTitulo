@@ -1,0 +1,79 @@
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\DAO.dll.config
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\DAO.dll
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\DAO.pdb
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\DTO.dll
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\Entidades.dll
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\EntityFramework.dll
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\DTO.pdb
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\Entidades.pdb
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\EntityFramework.xml
+C:\Desarrollo\Personal\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Desarrollo\Personal\BlackSheet\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Desarrollo\Personal\BlackSheet\DAO\obj\Debug\DAO.dll
+C:\Desarrollo\Personal\BlackSheet\DAO\obj\Debug\DAO.pdb
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\DAO.dll.config
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\DAO.dll
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\DAO.pdb
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\DTO.dll
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\Entidades.dll
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.dll
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.dll
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\DTO.pdb
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\Entidades.pdb
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.xml
+G:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.xml
+G:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+G:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.dll
+G:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.pdb
+C:\Desarrollo\DAO\bin\Debug\DAO.dll.config
+C:\Desarrollo\DAO\bin\Debug\DAO.dll
+C:\Desarrollo\DAO\bin\Debug\DAO.pdb
+C:\Desarrollo\DAO\bin\Debug\DTO.dll
+C:\Desarrollo\DAO\bin\Debug\Entidades.dll
+C:\Desarrollo\DAO\bin\Debug\EntityFramework.dll
+C:\Desarrollo\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Desarrollo\DAO\bin\Debug\DTO.pdb
+C:\Desarrollo\DAO\bin\Debug\Entidades.pdb
+C:\Desarrollo\DAO\bin\Debug\Entidades.dll.config
+C:\Desarrollo\DAO\bin\Debug\EntityFramework.xml
+C:\Desarrollo\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Desarrollo\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Desarrollo\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Desarrollo\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Desarrollo\DAO\obj\Debug\DAO.dll
+C:\Desarrollo\DAO\obj\Debug\DAO.pdb
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\DAO.dll.config
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\DAO.dll
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\DAO.pdb
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\DTO.dll
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\Entidades.dll
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.dll
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\DTO.pdb
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\Entidades.pdb
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\Entidades.dll.config
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.xml
+D:\Desarrollo\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.dll
+D:\Desarrollo\BlackSheet\DAO\obj\Debug\DAO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\DAO.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\DAO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\DAO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\EntityFramework.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\DTO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\Entidades.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\Entidades.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\EntityFramework.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Debug\DAO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\DAO\obj\Debug\DAO.pdb

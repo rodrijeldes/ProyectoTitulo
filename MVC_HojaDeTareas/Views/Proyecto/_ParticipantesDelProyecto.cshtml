@@ -1,0 +1,62 @@
+﻿
+@model MVC_HojaDeTareas.Models.Proyecto.ParticipantesProyectoModel
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        @Html.HiddenFor(m => m.idProyecto)
+            
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Usuarios del Proyecto</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel panel-body">
+                                                <div id="row">
+                                                    <div class="col-md-6">
+                                                        @Html.Label("Usuario ", new { @class = "form-label" })
+                                                        <div class="form-group input-group">
+
+
+                                                            @Html.TextBoxFor(m => m.usuario, new { @class = "form-control" })
+                                                            <span class="input-group-btn" onclick="BuscarUsuarios()"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-md-3">
+                                                        <div class="row">@Html.CheckBoxFor(m => m.asignaActividad, new { @class = "" }) &ensp;Asigna Actividades</div>
+                                                        <div class="row">@Html.CheckBoxFor(m => m.cierraActicidad, new { @class = "" })&ensp;Cierra Actividades</div>
+                                                        <div class="row">@Html.CheckBoxFor(m => m.agregaParticipante, new { @class = "" })&ensp;Agrega Participantes</div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> 
+                                            <div class="panel panel-footer">
+                                                <div class="row">
+                                                    <div class="col-md-6" id="dvRusltadoUsuarios"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table table-responsive" id="dvListaParticipantes">
+                                    @Html.Action("_ListaParticipantesDelProyecto", "Proyecto", Model.idProyecto)
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+
+   

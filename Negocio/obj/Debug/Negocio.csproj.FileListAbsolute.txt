@@ -1,0 +1,102 @@
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\Negocio.dll.config
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\Negocio.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\Negocio.pdb
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\DAO.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\DTO.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\Entidades.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\EntityFramework.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\UtilObjects.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\DAO.pdb
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\DTO.pdb
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\Entidades.pdb
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\UtilObjects.pdb
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\EntityFramework.xml
+C:\Desarrollo\Personal\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Desarrollo\Personal\BlackSheet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Desarrollo\Personal\BlackSheet\Negocio\obj\Debug\Negocio.dll
+C:\Desarrollo\Personal\BlackSheet\Negocio\obj\Debug\Negocio.pdb
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\Negocio.dll.config
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\Negocio.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\Negocio.pdb
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\DAO.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\DTO.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\Entidades.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\UtilObjects.dll
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\DAO.pdb
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\DTO.pdb
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\Entidades.pdb
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\UtilObjects.pdb
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.xml
+G:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+G:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+G:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.dll
+G:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.pdb
+C:\Desarrollo\Negocio\bin\Debug\Negocio.dll.config
+C:\Desarrollo\Negocio\bin\Debug\Negocio.dll
+C:\Desarrollo\Negocio\bin\Debug\Negocio.pdb
+C:\Desarrollo\Negocio\bin\Debug\DAO.dll
+C:\Desarrollo\Negocio\bin\Debug\DTO.dll
+C:\Desarrollo\Negocio\bin\Debug\Entidades.dll
+C:\Desarrollo\Negocio\bin\Debug\EntityFramework.dll
+C:\Desarrollo\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Desarrollo\Negocio\bin\Debug\UtilObjects.dll
+C:\Desarrollo\Negocio\bin\Debug\DAO.pdb
+C:\Desarrollo\Negocio\bin\Debug\DAO.dll.config
+C:\Desarrollo\Negocio\bin\Debug\DTO.pdb
+C:\Desarrollo\Negocio\bin\Debug\Entidades.pdb
+C:\Desarrollo\Negocio\bin\Debug\Entidades.dll.config
+C:\Desarrollo\Negocio\bin\Debug\UtilObjects.pdb
+C:\Desarrollo\Negocio\bin\Debug\UtilObjects.dll.config
+C:\Desarrollo\Negocio\bin\Debug\EntityFramework.xml
+C:\Desarrollo\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Desarrollo\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Desarrollo\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Desarrollo\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Desarrollo\Negocio\obj\Debug\Negocio.dll
+C:\Desarrollo\Negocio\obj\Debug\Negocio.pdb
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\Negocio.dll.config
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\Negocio.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\Negocio.pdb
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\DAO.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\DTO.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\Entidades.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\UtilObjects.dll
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\DAO.pdb
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\DAO.dll.config
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\DTO.pdb
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\Entidades.pdb
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\Entidades.dll.config
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\UtilObjects.pdb
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\UtilObjects.dll.config
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.xml
+D:\Desarrollo\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+D:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.dll
+D:\Desarrollo\BlackSheet\Negocio\obj\Debug\Negocio.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\Negocio.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\Negocio.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\Negocio.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\DAO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\DTO.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\Entidades.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\EntityFramework.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\DAO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\DAO.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\DTO.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\Entidades.pdb
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\Entidades.dll.config
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\EntityFramework.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\obj\Debug\Negocio.dll
+D:\Programacion\proyecto Titulo\BlackSheet\BlackSheet\Negocio\obj\Debug\Negocio.pdb

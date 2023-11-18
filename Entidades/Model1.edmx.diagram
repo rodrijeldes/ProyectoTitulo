@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51193f49c42f450db421202d7f21d65d" Name="Diagram1" ZoomLevel="59">
+        <EntityTypeShape EntityType="HojaDeTareasModel.ActividadRelacionada" Width="1.5" PointX="20.25" PointY="16.625" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.ActividadUsuario" Width="1.5" PointX="12.75" PointY="12.5" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.AdjuntoActividad" Width="1.5" PointX="24.125" PointY="16" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.AdjuntoProyecto" Width="1.5" PointX="20.5" PointY="19.625" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.Adjuntos" Width="1.5" PointX="23.625" PointY="19.625" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.AvanceActividad" Width="1.5" PointX="15.75" PointY="12.75" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.DependenciaDeUsuarios" Width="1.5" PointX="5.875" PointY="14.5" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.EstadoActividad" Width="1.5" PointX="15.75" PointY="19.625" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.EstadoProyecto" Width="2" PointX="8.75" PointY="19.625" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.HistoricoCambiosDeEstado" Width="1.5" PointX="12.75" PointY="15.375" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.Proyecto" Width="1.5" PointX="6.25" PointY="19" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.Usuario" Width="1.5" PointX="10.5" PointY="14.5" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.UsuarioProyecto" Width="1.5" PointX="13" PointY="19.5" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_ActividadUsuario_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AdjuntoActividad_Adjuntos" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AdjuntoActividad_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AdjuntoProyecto_Adjuntos" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AdjuntoProyecto_Proyecto" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AdjuntoProyecto_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_Adjuntos_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AvanceActividad_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_DependenciaDeUsuarios_Usuario1" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_EstadoActividad" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_Proyecto_EstadoProyecto" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_HistoricoCambiosDeEstado_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_Proyecto_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_UsuarioProyecto_Proyecto" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_UsuarioProyecto_Usuario" />
+        <EntityTypeShape EntityType="HojaDeTareasModel.Actividad" Width="1.5" PointX="18" PointY="14.5" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_Actividad_EstadoActividad" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_Actividad_Proyecto" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_Actividad_Usuario" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_ActividadRelacionada_Actividad" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_ActividadRelacionada_Actividad1" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_ActividadUsuario_Actividad" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AdjuntoActividad_Actividad" />
+        <AssociationConnector Association="HojaDeTareasModel.FK_AvanceActividad_Actividad" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

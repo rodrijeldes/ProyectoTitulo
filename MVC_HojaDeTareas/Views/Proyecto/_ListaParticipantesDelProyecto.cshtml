@@ -1,0 +1,40 @@
+﻿@model MVC_HojaDeTareas.Models.Proyecto.ListaPrticipantesProyectoModel
+
+       <table class="table table-responsive table-hover">
+           <thead>
+               <tr>
+                   <th>Usuario</th>
+                   <th>Tipo Usuario</th>
+                   <th>Asigna Actividad</th>
+                   <th>Cierra Actividad</th>
+                   <th>AgregaParticipantes</th>
+                   <th>Acción</th>
+               </tr>
+           </thead>
+           <tbody>
+               @if (Model.listaUsuarios != null)
+               {
+                   foreach (var l in Model.listaUsuarios)
+                   {
+                   <tr>
+                       <td>@l.correo</td>
+                       <td>@l.tipoIntegrante</td>
+                       <td style="text-align:center">
+                       @if (l.puedeAsignarActividad == true)
+                       { <span class="fa fa-check-square-o"></span>}
+                       </td>
+                       <td style="text-align:center">
+                           @if (l.puedeCerrarActividad == true)
+                       { <span class="fa fa-check-square-o"></span>}
+                       </td>
+                       <td style="text-align:center">
+                       @if (l.puedeAgregarParticipante == true)
+                       { <span class="fa fa-check-square-o"></span>}
+                       </td>
+                       <td></td>
+                   </tr>
+                   }
+               }
+           </tbody>
+       </table>
+

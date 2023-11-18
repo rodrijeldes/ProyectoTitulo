@@ -1,0 +1,51 @@
+﻿@model MVC_HojaDeTareas.Models.Actividad.ActividadModel
+@{
+    ViewBag.Title = "Actividad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Actividades</h2>
+<h3>
+    @Html.Label("Proyecto", new { @class = "form-Label" })
+    @Html.DropDownListFor(m => m.idListaProyecto, new SelectList(Model.listaProyectos, "value", "text"),"Seleccione Proyecto" ,new { @class = "form-control" })
+
+</h3>
+<div id="dvHojaActividad">
+    @Html.Action("_Actividad","Actividad",Model.idListaProyecto)
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $('#idListaProyecto').change(function () {
+            var idProyecto = $(this).val();
+            if (idProyecto == '' || idProyecto == null || idProyecto == undefined) { idProyecto = 0;}
+            $('#dvHojaActividad').load('@Url.Action("_Actividad", "Actividad")',{idProyecto : idProyecto});
+        });
+
+        $('.date').datetimepicker({
+            locale: 'es',
+            format: 'DD/MM/YYYY'
+        });
+
+        $('#fechoTermino').datetimepicker({
+            locale: 'es',
+            format: 'DD/MM/YYYY'
+        });
+
+        $(function () {
+            $('#dvPanelCrear').hide();
+        });
+
+        function MostrarAgregarActividad() {
+
+            if ($('#dvPanelCrear').is(":visible"))
+            { $('#dvPanelCrear').hide(500) }
+            else
+            {
+                $('#dvPanelCrear').show(500);
+            }
+        }
+    </script>
+}
